@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:teste/registration_screen.dart';
+import 'package:wyrzer/registration_screen.dart';
 import 'auth_service.dart';
 import 'home.dart';
 

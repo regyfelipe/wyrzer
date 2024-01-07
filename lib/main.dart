@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste/login.dart';
+import 'package:wyrzer/login.dart';
 import 'registration_screen.dart';
 
 void main() {

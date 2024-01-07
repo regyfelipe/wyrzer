@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 import 'dart:convert';
 import 'dart:io';
-import 'package:teste/login.dart';
+import 'package:wyrzer/login.dart';
 
 import 'auth_service.dart';
 import 'package:flutter/material.dart';
