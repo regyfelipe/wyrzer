@@ -1,16 +1,36 @@
-# wyrzer
+# Wyrzer - Sua Rede Social em Flutter
 
-A new Flutter project.
+Bem-vindo ao Wyrzer, a sua nova rede social desenvolvida em Flutter e Dart!
 
-## Getting Started
+## Capturas de Tela
 
-This project is a starting point for a Flutter application.
+| Tela Inicial           | Tela de Login           |
+| ---------------------- | ----------------------- |
+| ![Tela Inicial](Figma/inicio.png) | ![Tela de Login](Figma/login.png) |
 
-A few resources to get you started if this is your first Flutter project:
+| Tela de Comentário      | Tela de Cadastro        |
+| ----------------------- | ----------------------- |
+| ![Tela de Comentário](Figma/comentario.png) | ![Tela de Cadastro](Figma/cadastro.jpg) |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Como Contribuir
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Se você deseja contribuir para o desenvolvimento do Wyrzer, siga estas etapas:
+
+1. Faça um fork do repositório.
+2. Clone o fork para a sua máquina local.
+3. Crie uma branch para suas alterações: `git checkout -b feature/nova-funcionalidade`.
+4. Faça suas alterações e commit: `git commit -m "Adiciona nova funcionalidade"`.
+5. Faça um push para a sua branch: `git push origin feature/nova-funcionalidade`.
+6. Abra um Pull Request para a branch principal do repositório original.
+
+Esperamos ansiosos por suas contribuições!
+
+## Requisitos do Sistema
+
+Certifique-se de ter Flutter e Dart instalados em sua máquina. Você pode encontrar mais informações em [flutter.dev](https://flutter.dev).
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+
+---

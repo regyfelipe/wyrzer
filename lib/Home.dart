@@ -1,78 +1,65 @@
-import 'package:flutter/material.dart';
-import 'package:custom_navigation_bar/custom_navigation_bar.dart';
+import 'dart:typed_data';
+import 'dart:io';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:wyrzer/pages/paper_plane_page.dart';
-import 'package:wyrzer/pages/search_page.dart';
-import 'package:wyrzer/pages/home_page.dart';
-import 'package:wyrzer/pages/bell_page.dart';
-import 'package:wyrzer/pages/user_page.dart';
+import 'package:flutter/material.dart';
 
+class HomeScreen extends StatelessWidget {
+  final String username;
+  final String email;
+  final List<dynamic> avatarBytes;
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _currentIndex = 0;
-
-  final List<Widget> _pages = [
-    PaperPlanePage(),
-    SearchPage(),
-    HomePage(),
-    BellPage(),
-    UserPage(),
-  ];
+  HomeScreen({
+    required this.username,
+    required this.email,
+    required this.avatarBytes,
+  });
 
   @override
   Widget build(BuildContext context) {
+    Uint8List bytes = Uint8List.fromList(List<int>.from(avatarBytes));
+
     return Scaffold(
-      body: _pages[_currentIndex],
-      bottomNavigationBar: CustomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: [
-          CustomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icon/paper-plane.svg',
-              height: 24,
-              width: 24,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(
+                  backgroundImage: MemoryImage(bytes),
+                  radius: 15.0,
+                ),
+                SizedBox(width: 10.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '$username',
+                      style: TextStyle(
+                          fontSize: 15.0, fontFamily: 'Eastman-Regular'),
+                    ),
+                    Text(
+                      'Fortaleza-ce',
+                      style: TextStyle(
+                          fontSize: 9.0, fontFamily: 'Eastman-Regular'),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ),
-          CustomNavigationBarItem(
-            icon: SvgPicture.asset(
+            SvgPicture.asset(
               'assets/icon/search.svg',
-              height: 24,
-              width: 24,
+              height: 20.0,
+              width: 20.0,
             ),
-          ),
-          CustomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icon/home.svg',
-              height: 24,
-              width: 24,
-            ),
-          ),
-          CustomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icon/bell.svg',
-              height: 24,
-              width: 24,
-            ),
-          ),
-          CustomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icon/user.svg',
-              height: 24,
-              width: 24,
-            ),
-          ),
-        ],
+          ],
+        ),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Text('Conteúdo para a Página Inicial'),
       ),
     );
   }
